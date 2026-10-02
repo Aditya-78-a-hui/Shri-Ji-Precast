@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shri Ji Precast | Chhatarpur MP</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#172033}
+header{position:sticky;top:0;z-index:10;background:#102a43;color:#fff;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 3px 12px #0002}
+header h1{margin:0;font-size:26px}header p{margin:4px 0 0;color:#cfe3f7}
+nav{display:flex;flex-wrap:wrap;gap:10px}nav a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:8px}nav a:hover{background:#ffffff20}
+main{max-width:1200px;margin:auto}.hero{margin:24px 4%;padding:55px 35px;border-radius:24px;background:linear-gradient(135deg,#0b3d62,#1976a8);color:white;box-shadow:0 10px 30px #0002}.hero h2{font-size:42px;margin:15px 0}.hero p{font-size:18px;max-width:700px;line-height:1.6}.badge{display:inline-block;background:#ffffff20;border:1px solid #ffffff55;padding:7px 12px;border-radius:20px}
+.section{padding:35px 4%}.section h2{font-size:30px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card,.product{background:#fff;border-radius:18px;padding:20px;box-shadow:0 5px 20px #00000010;border:1px solid #e7edf4}.product img{width:100%;height:170px;object-fit:contain;background:#f5f8fb;border-radius:12px}.product h3{margin-bottom:8px}.price{font-size:22px;font-weight:700}.button,button{border:0;background:#0b6e99;color:#fff;padding:11px 16px;border-radius:9px;cursor:pointer;font-weight:600}.button:hover,button:hover{opacity:.9}.danger{background:#b42318}.secondary{background:#475467}.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.cart-row{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;padding:12px 0;gap:15px}.total{font-size:24px;font-weight:700;margin-top:18px}.actions{display:flex;gap:10px;flex-wrap:wrap}.modal{position:fixed;inset:0;background:#0008;display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.modal.show{display:flex}.modal-box{background:#fff;border-radius:18px;max-width:650px;width:100%;max-height:90vh;overflow:auto;padding:25px}.modal-box input,.modal-box textarea{width:100%;padding:11px;margin:7px 0 14px;border:1px solid #ccd5df;border-radius:8px}.close{float:right;background:#eee;color:#111}.small{color:#667085;font-size:14px}.success{color:#067647;font-weight:700}.developer{display:flex;gap:20px;align-items:center}.avatar{width:80px;height:80px;border-radius:50%;background:#0b6e99;color:#fff;display:grid;place-items:center;font-size:25px;font-weight:bold}footer{background:#102a43;color:#fff;text-align:center;padding:25px;margin-top:40px}
+@media(max-width:760px){header{align-items:flex-start;flex-direction:column}.hero h2{font-size:32px}.two{grid-template-columns:1fr}.cart-row{align-items:flex-start;flex-direction:column}}
+
+.customer-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px 0;padding:18px;background:#f8fafc;border:1px solid #e4e7ec;border-radius:14px}
+.customer-form .full{grid-column:1/-1}
+.customer-form label{font-weight:600;font-size:14px}
+.customer-form input,.customer-form textarea{width:100%;padding:11px;margin-top:5px;border:1px solid #ccd5df;border-radius:8px;font:inherit}
+.customer-form textarea{min-height:75px;resize:vertical}
+@media(max-width:700px){.customer-form{grid-template-columns:1fr}.customer-form .full{grid-column:auto}}
+.invoice-head{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.customer-box{background:#f8fafc;border:1px solid #e4e7ec;border-radius:10px;padding:12px;margin:12px 0}
+
+</style>
+<style id="professional-invoice-style">
+.invoice-paper{background:#fff;border:1px solid #d9e2ec;border-radius:16px;overflow:hidden;box-shadow:0 10px 35px #0002;margin-top:10px}
+.invoice-banner{background:linear-gradient(135deg,#0b3d62,#0b6e99);color:#fff;padding:24px}
+.invoice-banner h2{margin:0 0 5px;font-size:30px}.invoice-banner p{margin:3px 0;color:#e6f4ff}
+.invoice-customer{margin:16px;padding:16px;background:#f8fafc;border:1px solid #e4e7ec;border-radius:12px}
+.invoice-table{width:100%;border-collapse:collapse;margin:12px 0}.invoice-table th,.invoice-table td{padding:11px;border-bottom:1px solid #e4e7ec;text-align:left}.invoice-table th{background:#eaf4fa}
+.invoice-total{text-align:right;padding:16px;background:#f4fafc;font-size:22px;font-weight:700}
+.qty-control{display:flex;gap:8px;align-items:center;margin:10px 0}.qty-control input{width:90px;padding:10px;border:1px solid #ccd5df;border-radius:8px;font-weight:700}.bill-options{margin-top:16px;padding:16px;border:1px solid #d9e2ec;border-radius:12px;background:#f8fafc}.bill-options h3{margin-bottom:10px}.bill-options .hidden{display:none}
+.product-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.product-actions button{flex:1;min-width:100px}.image-preview{width:100%;height:180px;object-fit:contain;border:1px dashed #b8c4cf;border-radius:12px;background:#f8fafc;margin:8px 0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-grid .full{grid-column:1/-1}.form-grid label{font-weight:600;font-size:14px}.form-grid input,.form-grid select{width:100%;padding:11px;margin-top:5px;border:1px solid #ccd5df;border-radius:8px;font:inherit}@media(max-width:700px){.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}}
+.owner-about{background:linear-gradient(135deg,#f0f8ff,#fff);border:1px solid #cfe5f4;border-radius:14px;padding:18px;margin-top:15px}
+@media print{body *{visibility:hidden}#modal,#modal *{visibility:visible}#modal{position:absolute;left:0;top:0;background:#fff}.modal-box{max-width:none;box-shadow:none}.invoice-paper{box-shadow:none;border:0}}
+</style>
+</head>
+<body>
+<header>
+  <div><h1>Shri Ji Precast</h1><p>Mfg. R.C.C. | Chhatarpur, Madhya Pradesh</p></div>
+  <nav>
+    <a href="#home">Home</a><a href="#products">Products</a><a href="#about">About</a><a href="#developer">Developer</a>
+    <a href="#cart">Cart (<span id="cartCount">0</span>)</a>
+    <a href="javascript:void(0)" onclick="openOwner()">Owner Panel</a>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <span class="badge">PRECAST RCC PRODUCTS</span>
+  <h2>Quality Precast Products for Construction</h2>
+  <p>RCC Patiya, RCC Pillar, Rounding Pillar and Precast RCC Boundary Wall. Browse products, add items to cart and generate a demo bill directly in Chrome.</p>
+  <a class="button" href="#products">View Products</a>
+</section>
+
+<section id="products" class="section">
+  <h2>Our Products</h2>
+  <div id="productsGrid" class="grid"></div>
+</section>
+
+<section id="about" class="section two">
+  <div class="card"><h2>About Shri Ji Precast</h2><p>Shri Ji Precast is a precast RCC product business project based in Chhatarpur, Madhya Pradesh.</p><p>This browser-ready demo includes product listing, search, cart, checkout, invoice generation, feedback and owner panel.</p></div>
+  <div class="card"><h2>Contact</h2><p>Chhatarpur, Madhya Pradesh</p><p><a href="https://wa.me/919752521548" target="_blank">9752521548 – WhatsApp</a></p><p><a href="https://wa.me/919171400231" target="_blank">9171400231 – WhatsApp</a></p></div>
+</section>
+
+<section id="developer" class="section">
+  <div class="card developer"><div class="avatar">AP</div><div><h2>About Developer</h2><h3>Er. Aditya Pandey</h3><p>Diploma in Computer Science Engineering</p><p>Frontend development, JavaScript and web application development.</p></div></div>
+</section>
+
+<section id="cart" class="section">
+  <div class="card"><h2>Shopping Cart</h2><div id="cartList"></div><div class="total">Total: ₹<span id="cartTotal">0</span></div><br><div class="customer-form">
+  <div>
+    <label>Customer Name *</label>
+    <input id="customerName" type="text" placeholder="Enter customer name">
+  </div>
+  <div>
+    <label>Mobile Number *</label>
+    <input id="customerPhone" type="tel" placeholder="10-digit mobile number" maxlength="10">
+  </div>
+  <div class="full">
+    <label>Customer Address *</label>
+    <textarea id="customerAddress" placeholder="Enter complete address"></textarea>
+  </div>
+  <div>
+    <label>City</label>
+    <input id="customerCity" type="text" placeholder="City">
+  </div>
+</div>
+<div class="bill-options">
+  <h3>🧾 Bill Type</h3>
+  <label><input type="radio" name="billType" value="normal" checked onchange="toggleTaxFields()"> Normal Bill</label>
+  &nbsp;&nbsp;
+  <label><input type="radio" name="billType" value="gst" onchange="toggleTaxFields()"> GST / Udyam Bill</label>
+  <div id="taxFields" class="form-grid" style="margin-top:12px;display:none">
+    <div><label>GST Number</label><input id="gstNo" type="text" placeholder="Enter GSTIN"></div>
+    <div><label>Udyam Registration Number</label><input id="udyamNo" type="text" placeholder="Enter Udyam No. / UDYAM-XX-00-0000000"></div>
+    <div><label>GST Rate (%)</label><select id="gstRate"><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option></select></div>
+  </div>
+  <p class="small" style="margin-top:8px">Normal Bill: GST/Udyam details are not shown. GST / Udyam Bill: the entered business numbers are printed on the invoice.</p>
+</div>
+<div class="actions">
+  <button onclick="checkout()">Checkout & Generate Bill</button>
+  <button class="secondary" onclick="clearCart()">Clear Cart</button>
+</div>
+<p id="orderStatus"></p></div>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h2>Customer Feedback</h2>
+    <input id="feedbackName" placeholder="Your Name" style="padding:11px;width:100%;margin:6px 0;border:1px solid #ccd5df;border-radius:8px">
+    <textarea id="feedbackText" placeholder="Your Feedback" style="padding:11px;width:100%;margin:6px 0;border:1px solid #ccd5df;border-radius:8px"></textarea>
+    <button onclick="submitFeedback()">Submit Feedback</button>
+  </div>
+</section>
+
+<section id="ownerAbout" class="section">
+  <div class="owner-about">
+    <h2>About Owner / Contact</h2>
+    <p><b>Ramila Yadav</b> — Owner</p>
+    <p>📞 <a href="tel:972521548">972521548</a> |
+       <a href="https://wa.me/91972521548" target="_blank">WhatsApp</a></p>
+    <p><b>Ranjeet Kushwaha</b> — Contact</p>
+    <p>📞 <a href="tel:9171400231">9171400231</a> |
+       <a href="https://wa.me/919171400231" target="_blank">WhatsApp</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>© 2026 Shri Ji Precast | Developed by Er. Aditya Pandey</footer>
+
+<div id="modal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal()">Close</button><div id="modalContent"></div></div></div>
+
+<script>
+// Self-contained product images so the website works even when index.html is opened directly.
+const svgImage = (title, subtitle, kind) => {
+  const shapes = kind === "wall"
+    ? '<rect x="70" y="75" width="260" height="105" rx="6" fill="#d7dde3" stroke="#65717d" stroke-width="5"/><rect x="42" y="45" width="28" height="165" rx="4" fill="#aeb8c2" stroke="#596572" stroke-width="5"/><rect x="330" y="45" width="28" height="165" rx="4" fill="#aeb8c2" stroke="#596572" stroke-width="5"/><line x1="55" y1="35" x2="345" y2="35" stroke="#333" stroke-width="5" stroke-dasharray="10 7"/>'
+    : kind === "pillar"
+    ? '<rect x="145" y="35" width="110" height="190" rx="8" fill="#c5ccd3" stroke="#596572" stroke-width="6"/><rect x="130" y="25" width="140" height="24" rx="5" fill="#aeb8c2" stroke="#596572" stroke-width="5"/><rect x="130" y="211" width="140" height="24" rx="5" fill="#aeb8c2" stroke="#596572" stroke-width="5"/>'
+    : '<rect x="55" y="75" width="330" height="95" rx="8" fill="#d0d6dc" stroke="#596572" stroke-width="6"/><line x1="85" y1="100" x2="355" y2="100" stroke="#9aa5af" stroke-width="4"/><line x1="85" y1="125" x2="355" y2="125" stroke="#9aa5af" stroke-width="4"/><line x1="85" y1="150" x2="355" y2="150" stroke="#9aa5af" stroke-width="4"/>';
+  return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="440" height="260" viewBox="0 0 440 260"><rect width="440" height="260" rx="20" fill="#f5f8fb"/><text x="220" y="24" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#0b3d62">${title}</text>${shapes}<text x="220" y="246" text-anchor="middle" font-family="Arial" font-size="13" fill="#667085">${subtitle}</text></svg>`);
+};
+const DEFAULT_IMAGES = {
+  patiya: svgImage("RCC PATIYA", "Precast RCC Slab / Patiya", "patiya"),
+  pillar: svgImage("RCC PILLAR", "Precast RCC Pillar", "pillar"),
+  wall: svgImage("RCC BOUNDARY WALL", "Precast RCC Boundary Wall", "wall")
+};
+
+const products=[
+{id:1,name:"RCC Patiya",price:60,unit:"piece",stock:200,image:DEFAULT_IMAGES.patiya,description:"Precast RCC Patiya for construction work."},
+{id:2,name:"RCC Pillar",price:450,unit:"piece",stock:350,image:DEFAULT_IMAGES.pillar,description:"Strong precast RCC pillar."},
+{id:3,name:"Rounding Pillar",price:800,unit:"piece",stock:800,image:DEFAULT_IMAGES.pillar,description:"Precast rounding pillar."},
+{id:4,name:"Precast RCC Boundary Wall",price:880,unit:"meter",stock:100,image:DEFAULT_IMAGES.wall,description:"Precast RCC boundary wall system."}
+];
+let cart=JSON.parse(localStorage.getItem("sjp_cart")||"[]");
+let savedProducts=JSON.parse(localStorage.getItem("sjp_products")||"null");
+if(savedProducts && Array.isArray(savedProducts)){
+  products.splice(0, products.length, ...savedProducts.map(function(p){
+    let image=p.image;
+    if(!image || image.indexOf("assets/")===0) image = p.name && p.name.toLowerCase().includes("boundary") ? DEFAULT_IMAGES.wall : (p.name && p.name.toLowerCase().includes("pillar") ? DEFAULT_IMAGES.pillar : DEFAULT_IMAGES.patiya);
+    return {...p,image:image};
+  }));
+  localStorage.setItem("sjp_products", JSON.stringify(products));
+}
+let bills=JSON.parse(localStorage.getItem("sjp_bills")||"[]");
+let feedback=JSON.parse(localStorage.getItem("sjp_feedback")||"[]");
+let owner=JSON.parse(localStorage.getItem("sjp_owner")||'{"id":"Ramila@yadav","password":"Shriram@321"}');
+
+function money(n){return Number(n).toLocaleString("en-IN",{minimumFractionDigits:2,maximumFractionDigits:2})}
+function save(){localStorage.setItem("sjp_cart",JSON.stringify(cart));localStorage.setItem("sjp_bills",JSON.stringify(bills));localStorage.setItem("sjp_feedback",JSON.stringify(feedback));localStorage.setItem("sjp_owner",JSON.stringify(owner));localStorage.setItem("sjp_products",JSON.stringify(products))}
+function renderProducts(){
+ document.getElementById("productsGrid").innerHTML=products.map(p=>`<article class="product"><img src="${p.image || DEFAULT_IMAGES.patiya}" alt="${escapeHtml(p.name)}" onerror="this.onerror=null;this.src=DEFAULT_IMAGES.patiya"><h3>${escapeHtml(p.name)}</h3><p class="price">₹${money(p.price)} / ${escapeHtml(p.unit)}</p><p>Stock: ${p.stock===null || p.stock==="" ? "Available on Enquiry" : escapeHtml(p.stock)}</p><div class="qty-control"><label><b>Quantity:</b></label><input id="qty-${p.id}" type="number" min="1" value="1" aria-label="Quantity for ${escapeHtml(p.name)}"></div><button onclick="addCart(${p.id})">🛒 Add to Cart</button></article>`).join("");
+}
+function addCart(id){
+  const p=products.find(x=>x.id===id);
+  if(!p)return;
+  const input=document.getElementById("qty-"+id);
+  const qty=Math.max(1,Number(input ? input.value : 1));
+  if(p.stock!==null && p.stock!=="" && qty>Number(p.stock)){
+    alert("Available stock: "+p.stock);
+    return;
+  }
+  const x=cart.find(x=>x.id===id);
+  if(x)x.qty+=qty;
+  else cart.push({id:p.id,name:p.name,price:p.price,unit:p.unit,qty:qty});
+  save();renderCart();location.hash="cart";
+}
+function changeQty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);save();renderCart()}
+function clearCart(){cart=[];save();renderCart()}
+function renderCart(){
+ document.getElementById("cartCount").textContent=cart.reduce((a,x)=>a+x.qty,0);
+ let total=cart.reduce((a,x)=>a+x.price*x.qty,0);document.getElementById("cartTotal").textContent=money(total);
+ document.getElementById("cartList").innerHTML=cart.length?cart.map((x,i)=>`<div class="cart-row"><div><b>${x.name}</b><div>₹${money(x.price)} × ${x.qty}</div></div><div class="actions"><button onclick="changeQty(${i},1)">+</button><button class="secondary" onclick="changeQty(${i},-1)">−</button></div></div>`).join(""):"<p>Your cart is empty.</p>";
+}
+function toggleTaxFields(){
+  const selected=(document.querySelector('input[name="billType"]:checked')||{}).value || "normal";
+  const box=document.getElementById("taxFields");
+  if(box) box.style.display=selected==="gst" ? "grid" : "none";
+}
+
+function checkout(){
+ if(!cart.length){
+   document.getElementById("orderStatus").textContent="Add a product before checkout.";
+   return;
+ }
+
+ const name=document.getElementById("customerName").value.trim();
+ const phone=document.getElementById("customerPhone").value.trim();
+ const address=document.getElementById("customerAddress").value.trim();
+ const city=document.getElementById("customerCity").value.trim();
+ const billType=(document.querySelector('input[name="billType"]:checked')||{}).value || "normal";
+ const gstNo=document.getElementById("gstNo").value.trim();
+ const udyamNo=document.getElementById("udyamNo").value.trim();
+ const gstRate=Number(document.getElementById("gstRate").value || 0);
+
+ if(!name || !phone || !address){
+   alert("Customer Name, Mobile Number and Address are required.");
+   return;
+ }
+
+ if(!/^\d{10}$/.test(phone)){
+   alert("Please enter a valid 10-digit mobile number.");
+   return;
+ }
+ if(billType==="gst" && !gstNo && !udyamNo){
+   alert("For GST / Udyam Bill, enter at least GST Number or Udyam Registration Number.");
+   return;
+ }
+
+ let billNo="SJP-"+Date.now();
+ let subtotal=cart.reduce((a,x)=>a+x.price*x.qty,0);
+ let gstAmount=billType==="gst" ? subtotal*gstRate/100 : 0;
+ let cgstAmount=billType==="gst" ? gstAmount/2 : 0;
+ let sgstAmount=billType==="gst" ? gstAmount/2 : 0;
+ let total=subtotal+gstAmount;
+
+ let bill={
+   billNo:billNo,
+   date:new Date().toLocaleString("en-IN"),
+   customer:{
+     name:name,
+     phone:phone,
+     address:address,
+     city:city
+   },
+   billType:billType,
+   gstNo:billType==="gst" ? gstNo : "",
+   udyamNo:billType==="gst" ? udyamNo : "",
+   gstRate:billType==="gst" ? gstRate : 0,
+   subtotal:subtotal,
+   gstAmount:gstAmount,
+   cgstAmount:cgstAmount,
+   sgstAmount:sgstAmount,
+   items:JSON.parse(JSON.stringify(cart)),
+   total:total
+ };
+
+ bills.unshift(bill);
+ save();
+ cart=[];
+ renderCart();
+
+ document.getElementById("customerName").value="";
+ document.getElementById("customerPhone").value="";
+ document.getElementById("customerAddress").value="";
+ document.getElementById("customerCity").value="";
+ document.getElementById("gstNo").value="";
+ document.getElementById("udyamNo").value="";
+ document.getElementById("gstRate").value="18";
+ document.querySelector('input[name="billType"][value="normal"]').checked=true;
+ toggleTaxFields();
+
+ document.getElementById("orderStatus").innerHTML=
+   `<span class="success">Order created. Bill No: ${billNo}</span>
+    <button onclick="showBill('${billNo}')">View Bill</button>`;
+}
+
+function showBill(no){
+  const b=bills.find(function(x){return x.billNo===no;});
+  if(!b)return;
+  const c=b.customer || {name:"-",phone:"-",address:"-",city:"-"};
+  openModal(`
+    <div class="invoice-paper">
+      <div class="invoice-banner">
+        <div class="invoice-head">
+          <div>
+            <h2>SHRI JI PRECAST</h2>
+            <p>Mfg. R.C.C. | Chhatarpur, Madhya Pradesh</p>
+            <p>Quality Precast RCC Products</p>
+          </div>
+          <div>
+            <b>INVOICE</b><br>
+            Bill No: ${escapeHtml(b.billNo)}<br>
+            Date: ${escapeHtml(b.date)}
+          </div>
+        </div>
+      </div>
+      <div class="invoice-customer">
+        <h3>Customer Details</h3>
+        <p><b>Name:</b> ${escapeHtml(c.name)}<br>
+        <b>Mobile:</b> ${escapeHtml(c.phone)}<br>
+        <b>Address:</b> ${escapeHtml(c.address)}<br>
+        <b>City:</b> ${escapeHtml(c.city || "-")}</p>
+      </div>
+      ${b.billType==="gst" ? `<div class="invoice-customer"><h3>Business / Tax Details</h3><p>${b.gstNo ? `<b>GST No:</b> ${escapeHtml(b.gstNo)}<br>` : ""}${b.udyamNo ? `<b>Udyam No:</b> ${escapeHtml(b.udyamNo)}` : ""}</p></div>` : ""}
+      <div style="padding:0 16px">
+        <h3>Order Details</h3>
+        <table class="invoice-table">
+          <thead><tr><th>Product</th><th>Qty</th><th>Rate</th><th>Amount</th></tr></thead>
+          <tbody>
+          ${b.items.map(function(x){return `<tr>
+            <td>${escapeHtml(x.name)}</td>
+            <td>${x.qty} ${escapeHtml(x.unit || "")}</td>
+            <td>₹${money(x.price)}</td>
+            <td>₹${money(x.qty*x.price)}</td>
+          </tr>`;}).join("")}
+          </tbody>
+        </table>
+      </div>
+      <div class="invoice-total">
+        ${b.billType==="gst" ? `<div style="font-size:15px;font-weight:500;text-align:right;margin-bottom:8px">Subtotal: ₹${money(b.subtotal ?? b.total)}<br>GST @ ${money(b.gstRate || 0)}%: ₹${money(b.gstAmount || 0)}<br>CGST: ₹${money(b.cgstAmount || 0)} &nbsp; | &nbsp; SGST: ₹${money(b.sgstAmount || 0)}</div>` : ""}
+        Grand Total: ₹${money(b.total)}
+      </div>
+      <div style="padding:16px">
+        <p><b>Owner:</b> Ramila Yadav | <b>Contact:</b> 972521548</p>
+        <p><b>Contact:</b> Ranjeet Kushwaha | <b>9171400231</b></p>
+        <p class="small">Thank you for choosing Shri Ji Precast.</p>
+        <button type="button" onclick="window.print()">Print / Save PDF</button>
+      </div>
+    </div>
+  `);
+}
+
+function escapeHtml(value){
+ return String(value ?? "")
+   .replace(/&/g,"&amp;")
+   .replace(/</g,"&lt;")
+   .replace(/>/g,"&gt;")
+   .replace(/"/g,"&quot;")
+   .replace(/'/g,"&#039;");
+}
+function openModal(html){document.getElementById("modalContent").innerHTML=html;document.getElementById("modal").classList.add("show")}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+
+function openOwner(){
+  const modal=document.getElementById("modal");
+  const content=document.getElementById("modalContent");
+  content.innerHTML=`
+    <h2>Owner Login</h2>
+    <p class="small">Enter Owner ID and Password.</p>
+    <input id="oid" type="text" placeholder="Owner ID">
+    <input id="opass" type="password" placeholder="Password">
+    <button type="button" onclick="ownerLogin()">Login</button>
+  `;
+  modal.classList.add("show");
+}
+function ownerLogin(){
+  const id=document.getElementById("oid").value.trim();
+  const pass=document.getElementById("opass").value;
+  if(id!==owner.id || pass!==owner.password){
+    alert("Wrong Owner ID or Password!");
+    return;
+  }
+  showOwner();
+}
+function showOwner(){
+  openModal(`
+    <h2>Owner Dashboard</h2>
+    <p class="small">Product management, bills, feedback and login settings.</p>
+    <div class="actions">
+      <button type="button" onclick="showAddProduct()">➕ Add New Product</button>
+      <button type="button" onclick="showManageProducts()">📦 Manage Products</button>
+      <button type="button" onclick="showBills()">🧾 Instant Bill / Full History</button>
+      <button type="button" onclick="showFeedback()">💬 All Feedback</button>
+      <button type="button" onclick="changeOwner()">🔐 Change ID / Password</button>
+    </div>
+    <div class="owner-about">
+      <h3>Owner / Contact</h3>
+      <p><b>Ramila Yadav</b> — 972521548</p>
+      <p><b>Ranjeet Kushwaha</b> — 9171400231</p>
+    </div>
+  `);
+}
+
+function showAddProduct(){
+  openModal(`
+    <h2>➕ Add New Product</h2>
+    <p class="small">Enter product details and upload a product image. The product is saved in this browser.</p>
+    <div class="form-grid">
+      <div><label>Product Name *</label><input id="pName" placeholder="e.g. RCC Slab"></div>
+      <div><label>Price *</label><input id="pPrice" type="number" min="0" step="0.01" placeholder="e.g. 650"></div>
+      <div><label>Unit *</label><select id="pUnit"><option value="piece">Piece</option><option value="meter">Meter</option><option value="feet">Feet</option><option value="kg">Kg</option></select></div>
+      <div><label>Stock</label><input id="pStock" type="number" min="0" placeholder="e.g. 100"></div>
+      <div class="full"><label>Product Image *</label><input id="pImage" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" onchange="previewProductImage(this)"><img id="pPreview" class="image-preview" src="${DEFAULT_IMAGES.pillar}" alt="Image preview"></div>
+      <div class="full"><label>Description</label><input id="pDesc" placeholder="Short product description"></div>
+    </div>
+    <div class="actions"><button type="button" onclick="addNewProduct()">Save Product</button><button type="button" class="secondary" onclick="showOwner()">Cancel</button></div>
+  `);
+}
+
+let pendingProductImage = "";
+function previewProductImage(input){
+  const file=input.files && input.files[0];
+  if(!file) return;
+  if(file.size>3*1024*1024){ alert("Image must be 3 MB or smaller."); input.value=""; return; }
+  const reader=new FileReader();
+  reader.onload=function(e){ pendingProductImage=e.target.result; document.getElementById("pPreview").src=pendingProductImage; };
+  reader.readAsDataURL(file);
+}
+
+function addNewProduct(){
+  const name=document.getElementById("pName").value.trim();
+  const price=Number(document.getElementById("pPrice").value);
+  const unit=document.getElementById("pUnit").value;
+  const stockValue=document.getElementById("pStock").value;
+  const desc=document.getElementById("pDesc").value.trim();
+  if(!name || !price || price<0 || !pendingProductImage){ alert("Product Name, Price and Product Image are required."); return; }
+  const id=products.length ? Math.max(...products.map(p=>Number(p.id)||0))+1 : 1;
+  products.push({id:id,name:name,price:price,unit:unit,stock:stockValue===""?null:Number(stockValue),image:pendingProductImage,description:desc});
+  save(); renderProducts(); pendingProductImage="";
+  alert("Product added successfully.");
+  showManageProducts();
+}
+
+function showManageProducts(){
+  openModal(`
+    <h2>📦 Manage Products</h2>
+    <div class="actions"><button type="button" onclick="showAddProduct()">➕ Add New Product</button><button type="button" class="secondary" onclick="showOwner()">Back</button></div>
+    ${products.map(p=>`<div class="card" style="margin-top:12px;display:grid;grid-template-columns:90px 1fr auto;gap:12px;align-items:center">
+      <img src="${p.image || DEFAULT_IMAGES.patiya}" onerror="this.onerror=null;this.src=DEFAULT_IMAGES.patiya" style="width:90px;height:70px;object-fit:contain;border-radius:8px;background:#f5f8fb">
+      <div><b>${escapeHtml(p.name)}</b><br>₹${money(p.price)} / ${escapeHtml(p.unit)}<br>Stock: ${p.stock===null?"Enquiry":p.stock}</div>
+      <div class="actions"><button type="button" onclick="editProduct(${p.id})">Edit</button><button type="button" class="danger" onclick="deleteProduct(${p.id})">Delete</button></div>
+    </div>`).join("")}
+  `);
+}
+
+function editProduct(id){
+  const p=products.find(x=>x.id===id); if(!p)return;
+  pendingProductImage=p.image;
+  openModal(`
+    <h2>✏️ Edit Product</h2>
+    <div class="form-grid">
+      <div><label>Product Name</label><input id="eName" value="${escapeHtml(p.name)}"></div>
+      <div><label>Price</label><input id="ePrice" type="number" min="0" step="0.01" value="${p.price}"></div>
+      <div><label>Unit</label><select id="eUnit"><option value="piece">Piece</option><option value="meter">Meter</option><option value="feet">Feet</option><option value="kg">Kg</option></select></div>
+      <div><label>Stock</label><input id="eStock" type="number" min="0" value="${p.stock===null?"":p.stock}"></div>
+      <div class="full"><label>Replace Product Image</label><input id="eImage" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" onchange="previewEditImage(this)"><img id="ePreview" class="image-preview" src="${p.image}" alt="Image preview"></div>
+      <div class="full"><label>Description</label><input id="eDesc" value="${escapeHtml(p.description||"")}"></div>
+    </div>
+    <div class="actions"><button type="button" onclick="saveEditedProduct(${id})">Save Changes</button><button type="button" class="secondary" onclick="showManageProducts()">Cancel</button></div>
+  `);
+  document.getElementById("eUnit").value=p.unit;
+}
+function previewEditImage(input){ const file=input.files&&input.files[0]; if(!file)return; if(file.size>3*1024*1024){alert("Image must be 3 MB or smaller.");input.value="";return;} const r=new FileReader(); r.onload=e=>{pendingProductImage=e.target.result;document.getElementById("ePreview").src=pendingProductImage;}; r.readAsDataURL(file); }
+function saveEditedProduct(id){
+  const p=products.find(x=>x.id===id); if(!p)return;
+  const name=document.getElementById("eName").value.trim(); const price=Number(document.getElementById("ePrice").value);
+  if(!name || price<0){alert("Enter valid product name and price.");return;}
+  p.name=name;p.price=price;p.unit=document.getElementById("eUnit").value;p.stock=document.getElementById("eStock").value===""?null:Number(document.getElementById("eStock").value);p.description=document.getElementById("eDesc").value.trim();p.image=pendingProductImage||p.image;
+  save();renderProducts();pendingProductImage="";showManageProducts();
+}
+function deleteProduct(id){
+  const p=products.find(x=>x.id===id); if(!p)return;
+  if(!confirm("Delete "+p.name+"?"))return;
+  const index=products.findIndex(x=>x.id===id); products.splice(index,1); save(); renderProducts(); showManageProducts();
+}
+
+function showBills(){
+  openModal(`
+    <h2>Full Bill History</h2>
+    ${bills.length ? bills.map(function(b){
+      return `<div class="card">
+        <b>${escapeHtml(b.billNo)}</b><br>
+        ${escapeHtml(b.date)}<br>
+        Customer: ${escapeHtml((b.customer||{}).name || "-")}<br>
+        Total: ₹${money(b.total)}<br>
+        <button type="button" onclick="showBill('${b.billNo}')">View / Print</button>
+      </div>`;
+    }).join("") : "<p>No bills yet.</p>"}
+  `);
+}
+function showFeedback(){
+  openModal(`
+    <h2>All Feedback</h2>
+    ${feedback.length ? feedback.map(function(f){
+      return `<div class="card"><b>${escapeHtml(f.name)}</b><br>
+        ${escapeHtml(f.text)}<br><span class="small">${escapeHtml(f.date)}</span></div>`;
+    }).join("") : "<p>No feedback yet.</p>"}
+  `);
+}
+function changeOwner(){
+  openModal(`
+    <h2>Change Owner Login</h2>
+    <p>Enter old credentials first.</p>
+    <input id="oldid" placeholder="Old Owner ID">
+    <input id="oldpass" type="password" placeholder="Old Password">
+    <hr>
+    <input id="newid" placeholder="New Owner ID">
+    <input id="newpass" type="password" placeholder="New Password">
+    <button type="button" onclick="saveOwner()">Save New Login</button>
+  `);
+}
+function saveOwner(){
+  const oldid=document.getElementById("oldid").value.trim();
+  const oldpass=document.getElementById("oldpass").value;
+  const newid=document.getElementById("newid").value.trim();
+  const newpass=document.getElementById("newpass").value;
+  if(oldid!==owner.id || oldpass!==owner.password){
+    alert("Old credentials are incorrect.");
+    return;
+  }
+  if(!newid || !newpass){
+    alert("Enter new ID and password.");
+    return;
+  }
+  owner={id:newid,password:newpass};
+  save();
+  alert("Owner login updated successfully.");
+  showOwner();
+}
+
+renderProducts();renderCart();
+</script>
+</body>
+</html>
